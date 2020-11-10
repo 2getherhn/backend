@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - apt-get update
+      - apt install jq
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --region $AWS_REGION --no-include-email)
+      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - SECRET_KEY=$(aws --region $AWS_REGION secretsmanager get-secret-value --secret-id $ENV-$APP-secret-key --query SecretString --output text)
+      - docker build --build-arg ENVIRONMENT=$ENV --build-arg SECRET_KEY=$SECRET_KEY -t $REPOSITORY_URI:$TASK_IMAGE_TAG  .
+      - docker tag $REPOSITORY_URI:$TASK_IMAGE_TAG $REPOSITORY_URI:build-$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:$TASK_IMAGE_TAG
+      - docker push $REPOSITORY_URI:build-$IMAGE_TAG
+      - aws ecs describe-task-definition --task-definition $ENV-$APP | jq '.taskDefinition' > taskdef.json
+      - envsubst < appspec_template.yaml > appspec.yaml
+      - DB_PASSWORD=$(aws --region $AWS_REGION secretsmanager get-secret-value --secret-id $ENV-$APP-rds-password --query SecretString --output text)
+      - docker run --rm -e ENVIRONMENT=$ENV -e DB_USERNAME=together_user -e DB_NAME=together$APP -e DB_HOSTNAME=db$APP.$ENV.together -e DB_PASSWORD=$DB_PASSWORD --entrypoint=/bin/bash $REPOSITORY_URI:$TASK_IMAGE_TAG -c "python manage.py makemigrations --noinput"
+      - docker run --rm -e ENVIRONMENT=$ENV -e DB_USERNAME=together_user -e DB_NAME=together$APP -e DB_HOSTNAME=db$APP.$ENV.together -e DB_PASSWORD=$DB_PASSWORD --entrypoint=/bin/bash $REPOSITORY_URI:$TASK_IMAGE_TAG -c "python manage.py migrate"
+      - docker run --rm -e ENVIRONMENT=$ENV -e DB_USERNAME=together_user -e DB_NAME=together$APP -e DB_HOSTNAME=db$APP.$ENV.together -e DB_PASSWORD=$DB_PASSWORD --entrypoint=/bin/bash $REPOSITORY_URI:$TASK_IMAGE_TAG -c "python manage.py loaddata db_auth_seeder.json"
+artifacts:
+  files:
+    - appspec.yaml
+    - taskdef.json

@@ -1,0 +1,345 @@
+table#datasync {
+	a {
+		color: #459fff !important;
+		font-weight: normal;
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		text-decoration-color: #459fff;
+		&:hover {
+			color: #2162a7 !important;
+			text-decoration-color: #2162a7 !important;
+		}
+	}
+	color: #4e667b !important;
+	border-collapse: collapse;
+	background: #fff;
+	border-radius: 4px;
+	border-radius: 0.28571rem;
+	overflow-x: auto;
+	box-shadow: 1px 0rem 3px 0px #a2a2a25e;
+	margin-bottom: 2px;
+	margin-bottom: 0.14286rem;
+	thead {
+		th {
+			background: white;
+			color: #8B9AA7;
+			text-transform: uppercase;
+			transition: background-color .1s;
+			a {
+				&:link {
+					color: #8B9AA7;
+				}
+				&:visited {
+					color: #8B9AA7;
+				}
+			}
+			.text {
+				a {
+					display: block;
+					cursor: pointer;
+				}
+			}
+		}
+		th.sortable#datasync {
+			cursor: pointer;
+			&:hover {
+				background: #1cacfc;
+			}
+		}
+		th.sorted {
+			position: relative;
+			padding-right: 32px;
+			padding-right: 2.28571rem;
+			.text {
+				display: inline-block;
+			}
+			.sortoptions {
+				display: inline-block;
+				a {
+					display: inline-block;
+					vertical-align: middle;
+				}
+				a.sortremove {
+					position: absolute;
+					top: 50%;
+					right: 18px;
+					right: 1.28571rem;
+					margin-top: -6px;
+					margin-top: -0.42857rem;
+					&:after {
+						font-family: 'jet-icons';
+						speak: none;
+						font-style: normal;
+						font-weight: normal;
+						font-variant: normal;
+						text-transform: none;
+						line-height: 1;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+						display: inline-block;
+						content: "";
+					}
+				}
+				a.descending {
+					position: absolute;
+					top: 50%;
+					right: 4px;
+					right: 0.28571rem;
+					margin-top: -6px;
+					margin-top: -0.42857rem;
+					&:after {
+						font-family: 'jet-icons';
+						speak: none;
+						font-style: normal;
+						font-weight: normal;
+						font-variant: normal;
+						text-transform: none;
+						line-height: 1;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+						display: inline-block;
+						content: "";
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}
+a {
+	&:visited {
+		color: #459fff !important;
+		font-weight: normal;
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		text-decoration-color: #459fff;
+	}
+	&:focus {
+		color: #459fff !important;
+		font-weight: normal;
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		text-decoration-color: #459fff;
+	}
+}
+.container-fluid {
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px;
+}
+p {
+	margin: .2em 0 .8em 0;
+	padding: 0;
+	line-height: 140%;
+}
+ul {
+	margin: .2em 0 .8em 0;
+	li {
+		list-style-type: none;
+		padding: 0;
+	}
+}
+.clear {
+	clear: both;
+}
+.nowrap {
+	white-space: nowrap;
+}
+input[type=checkbox] {
+	display: none;
+	&:checked+label {
+		&:before {
+			content: "";
+		}
+	}
+}
+input[type=checkbox]#action-toggle {
+	display: none !important;
+}
+input[type=checkbox]+label {
+	&:before {
+		font-family: 'jet-icons';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		display: inline-block;
+		color: #2faa60;
+		font-size: 12px;
+		font-size: 0.85714rem;
+		content: "";
+		letter-spacing: 5px;
+		letter-spacing: 0.35714rem;
+	}
+}
+.action-checkbox-column {
+	input[type=checkbox]+label {
+		&:before {
+			color: #8B9AA7;
+		}
+	}
+}
+td {
+	padding: 8px;
+	padding: 0.57143rem;
+	font-size: 13px;
+	font-size: 0.92857rem;
+}
+th {
+	padding: 8px;
+	padding: 0.57143rem;
+	font-size: 13px;
+	font-size: 0.92857rem;
+	text-align: left;
+}
+thead {
+	th {
+		font-weight: normal;
+		text-align: left;
+		white-space: nowrap;
+		vertical-align: middle;
+		font-size: 12px;
+		font-size: 0.85714rem;
+		&:first-child {
+			border-radius: 4px 0 0 0;
+			border-radius: 0.28571rem 0 0 0;
+		}
+		&:last-child {
+			border-radius: 0 4px 0 0;
+			border-radius: 0 0.28571rem 0 0;
+		}
+	}
+}
+tbody {
+	tr {
+		border-bottom: 1px solid #f1f2f4;
+		border-bottom: 0.07143rem solid #f1f2f4;
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+	tr.month_header{
+	    background-color:white !important;
+	    color: #343a40!important
+	}
+	tr.month_header.month_name{
+	    border-bottom: none !important;
+	}
+	tr.month_header h4{
+	    margin-top: 1rem;
+	}
+}
+.module {
+	p {
+		padding-left: 10px;
+		padding-left: 0.71429rem;
+		padding-right: 10px;
+		padding-right: 0.71429rem;
+	}
+	ul {
+		padding-left: 10px;
+		padding-left: 0.71429rem;
+		padding-right: 10px;
+		padding-right: 0.71429rem;
+		margin-left: 1.5em;
+	}
+	table#datasync {
+		border-collapse: collapse;
+	}
+}
+#changelist {
+	table#datasync {
+		width: 100%;
+		thead {
+			th.action-checkbox-column {
+				width: 1.5em;
+				text-align: center;
+			}
+		}
+		tbody {
+			td.action-checkbox {
+				text-align: center;
+			}
+		}
+		input {
+			margin: 0;
+			vertical-align: baseline;
+		}
+	}
+}
+.change-list {
+	.filtered {
+		table#datasync {
+			border-right: none;
+			tbody {
+				th {
+					padding-right: 1em;
+				}
+			}
+		}
+	}
+}
+.fas {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 20px;
+	color: #2faa60;
+}
+.fa-download {
+	&:before {
+		content: "\f019";
+		content: "\f019";
+	}
+}
+.fa-upload {
+	&:before {
+		content: "\f093";
+		content: "\f093";
+	}
+}
+.failed-status {
+	display: inline;
+	&:hover+.retry {
+		display: inline;
+	}
+}
+.retry {
+	position: absolute;
+	display: none;
+	margin-left: 0 !important;
+	&:hover {
+		display: inline;
+	}
+}
+.up-down-li {
+	display: inline;
+	margin: 3px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+@media only screen and (max-width: 960px) {
+	#changelist {
+		.results {
+			table#datasync {
+				border-radius: 0;
+			}
+			thead {
+				th {
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,679 @@
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+@page {
+  .document-view {
+    size: 8.5in 11in;
+    padding: 2cm;
+  }
+}
+.avatar {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 8px 0 0;
+  border-radius: 50%;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+body {
+  width: 100%;
+  color: #8B9AA7 !important;
+  background: #f1f5f1;
+}
+
+h1 {
+  color: #3e3b3b;
+}
+
+h2 {
+  color: #3e3b3b;
+}
+
+h3 {
+  color: #3e3b3b;
+}
+
+h4 {
+  color: #3e3b3b;
+}
+
+h5 {
+  color: #3e3b3b;
+}
+
+h6 {
+  color: #3e3b3b;
+}
+
+.header-wrapper {
+  height: 80px;
+}
+.header-wrapper .header {
+  overflow: hidden;
+  background: #6a8d8c !important;
+  margin-bottom: 0 !important;
+  height: 50px;
+  padding-left: 20px !important;
+}
+.header-wrapper .header .text-username {
+  font-weight: 500;
+}
+.header-wrapper .header .btn-logout {
+  font-weight: 500;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.header-wrapper .top-menu {
+  height: 36px;
+  background-color: #008A63;
+}
+.header-wrapper .top-menu .top-menu-wrapper {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.header-wrapper .top-menu .top-menu-wrapper .top-menu-item {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  color: #fff;
+  margin-right: 15px;
+  font-size: 0.8rem;
+}
+.header-wrapper .top-menu .top-menu-wrapper .top-menu-item-options {
+  float: right !important;
+  margin-top: 4px;
+}
+
+.form-group .required .control-label:after {
+  content: "*";
+  color: red;
+}
+.form-group .errors {
+  color: red;
+}
+
+.form-control.is-valid {
+  background-image: url() !important;
+}
+
+.was-validated .form-control:valid {
+  background-image: url() !important;
+}
+
+.date-box {
+  display: block;
+  background-color: #337ab7;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.date-box day {
+  color: #fff;
+  font-size: 42px;
+  font-weight: bold;
+}
+.date-box .dow {
+  color: #fff;
+}
+.date-box .date-box .mon {
+  color: #fff;
+}
+
+.nav > li > a {
+  color: #ffffff;
+}
+
+a#active-navbar {
+  background-color: #96b12a !important;
+  color: #fff !important;
+}
+
+.navbar {
+  padding: 0px;
+}
+
+navbar-dark .navbar-brand {
+  background-color: #2d323e !important;
+  color: #fff !important;
+}
+
+ul.navbar-nav.mr-auto {
+  margin: 0px !important;
+  margin-right: auto !important;
+}
+
+.fixed-top {
+  position: inherit;
+}
+
+.results-title {
+  margin: 35px auto 35px auto !important;
+}
+
+.borderless td {
+  border: none;
+}
+.borderless th {
+  border: none;
+}
+
+.btn-download-wrapper {
+  margin-top: 70px !important;
+}
+
+p {
+  font-family: "Poppins" sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a:hover {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+.wrapper {
+  display: block;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #627f78;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#sidebar .sidebar-header {
+  padding: 20px;
+}
+#sidebar .sidebar-header .logo {
+  width: 88px;
+  height: 88px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#sidebar .sidebar-header .logo img {
+  width: 100%;
+  height: 100%;
+}
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+#sidebar ul li a:hover {
+  color: #ffffff;
+  background: #11b793;
+}
+#sidebar ul li.active > a {
+  color: #fff;
+  background: #6dcc8f;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+a[aria-expanded=true] {
+  color: #fff;
+  background: #6dcc8f;
+}
+
+a[data-toggle=collapse] {
+  position: relative;
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6dcc8f;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+a.download {
+  background: #fff;
+  color: #7386D5;
+}
+
+a.article {
+  background: #6d7fcc !important;
+  color: #fff !important;
+}
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important;
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#content .navbar-brand .logo {
+  width: 48px;
+  height: 32px;
+  margin-right: 20px;
+}
+#content #main {
+  margin-top: 0px;
+  padding: 20px 5px 0 5px;
+  background-color: #f1f5f1;
+}
+#content #item-image {
+  display: block;
+  max-width: 300px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+}
+
+#job-filter {
+  margin-bottom: 1rem;
+}
+
+#main-navbar a.nav-link {
+  color: white !important;
+  padding: 18px;
+}
+#main-navbar .btn-primary {
+  color: #272c31;
+  background-color: white !important;
+  border-color: white !important;
+}
+
+#sidebarIcon {
+  padding-right: 24px;
+  font-size: 44px;
+  color: #ffffff;
+}
+
+.quotations {
+  margin-top: 1.5rem;
+}
+
+.quotation {
+  background-color: #f2f2f2;
+}
+
+.navbar-dark .navbar-brand {
+  color: #8B9EAB !important;
+}
+
+label {
+  margin-bottom: 0 !important;
+  font-size: 12px !important;
+}
+
+.document-view {
+  font-family: "Times New Roman" !important;
+}
+.document-view .line-item {
+  background-color: #ebeee8 !important;
+}
+.document-view address {
+  margin-bottom: 0 !important;
+}
+.document-view table.table-bordered {
+  border: 1px solid #5a6268;
+  margin-top: 20px;
+}
+.document-view table.table-bordered > thead > tr > th {
+  border: 1px solid #5a6268;
+}
+.document-view table.table-bordered > tbody > tr > td {
+  border: 1px solid #5a6268;
+}
+.document-view hr:first-child {
+  border-color: #1c7430;
+}
+.document-view .header-box {
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+.document-view .nav-tabs {
+  border-bottom: 1px solid #1c7430 !important;
+}
+.document-view .nav-tabs .nav-item {
+  width: 150px !important;
+  text-align: center;
+  background-color: #ebeee8;
+  border-bottom: 1px solid #1c7430 !important;
+}
+.document-view .nav-tabs .nav-link.active {
+  border-top: 3px solid #1c7430 !important;
+  border-bottom: 1px solid #F8F8FF !important;
+  background-color: #F8F8FF;
+}
+.document-view .nav-tabs .nav-item.show {
+  border-top: 3px solid #1c7430 !important;
+  border-bottom: 1px solid #F8F8FF !important;
+  background-color: #F8F8FF;
+}
+.document-view .tab-content {
+  background-color: #F8F8FF;
+}
+.document-view .tab-content h3 {
+  color: #000000 !important;
+}
+.document-view .tab-content h5 {
+  color: #000000 !important;
+}
+
+.user2 h3 {
+  font-weight: 200 !important;
+}
+
+#toolbar {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  z-index: 4;
+  padding: 0.2em 1em;
+}
+#toolbar a {
+  color: #26292b;
+  font-weight: bold;
+}
+#toolbar .start-center {
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center flex-start;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
+.text-primary {
+  color: #0b2b4d !important;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+
+  #sidebar.active {
+    margin-left: 0;
+  }
+
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+@media print {
+  .document-view {
+    max-width: 900px;
+  }
+  .document-view table {
+    page-break-inside: auto;
+  }
+  .document-view tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  .document-view .line-item {
+    background-color: #ebeee8 !important;
+  }
+  .document-view .printEl {
+    width: 8.5in;
+    height: 11in;
+  }
+  .document-view .tab-content .tab-pane {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .document-view .tab-content .text-primary {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 14pt;
+    color: #000000 !important;
+  }
+  .document-view .tab-content h5 {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 14pt;
+    color: #000000 !important;
+  }
+  .document-view .tab-content h3 {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 14pt;
+    color: #000000 !important;
+    font-size: 16pt !important;
+  }
+}
+.logo-icon {
+  width: 140px;
+  height: 40px;
+}
+
+/* reservations public */
+#reservations {
+  display: block;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+#reservations .header {
+  display: block;
+  height: 20px;
+  width: 100%;
+  background-color: #494949;
+}
+#reservations .subheader {
+  display: block;
+  height: 80px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+  line-height: 24px;
+  font-size: 13px;
+  color: #7c7c7c;
+  text-align: right;
+}
+#reservations .subheader .logo {
+  display: block;
+  margin-top: 14px;
+  width: 120px;
+  height: 36px;
+  /* margin-left: 35px; */
+}
+#reservations .form-title {
+  font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+/*
+ ------BUTTONS
+ */
+.btn.login {
+  background-color: #d73d32;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  color: white;
+}
+.btn.login:hover {
+  color: black;
+  background-color: #a72920;
+}
+.btn.login:visited {
+  color: white !important;
+}
+
+.btn.login {
+  width: 70%;
+  text-transform: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+body.raised-button {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mat-raised-button {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  transform: translate3d(0, 0, 0);
+  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#reservation-cards {
+  background-color: #f1f5f1;
+}
+
+.reservations-calendar tr {
+  height: 180px !important;
+}
+.reservations-calendar .weekday_head {
+  /* background-color: blue; */
+  font-weight: bold;
+  color: #3498db;
+}
+.reservations-calendar .weekday_head .sat, .reservations-calendar .weekday_head .sun {
+  color: #3498db;
+}
+.reservations-calendar .sat, .reservations-calendar .sun, .reservations-calendar .noday {
+  background-color: #f5f6fa;
+}
+.reservations-calendar .filled {
+  /* background-color: orange; */
+}
+.reservations-calendar .month {
+  font-size: 2.5em;
+}
+.reservations-calendar .month small {
+  font-size: 10px;
+}
+.reservations-calendar .pending {
+  background-color: #7f8fa6;
+}
+.reservations-calendar .assigned {
+  background-color: #44bd32;
+}
+.reservations-calendar .accepted {
+  background-color: #17a2b8;
+}
+.reservations-calendar .declined {
+  background-color: #dc3545;
+}
+.reservations-calendar .confirmed {
+  background-color: #273c75;
+}
+.reservations-calendar .selected {
+  background-color: #FFC312;
+}
+.reservations-calendar .cancelled {
+  background-color: #EE5A24;
+}
+.reservations-calendar .badge {
+  font-size: 1em;
+}
+
+#resevation_list .badge {
+  width: 300px;
+  font-size: 1em;
+}
+
+#reservation_list td {
+  vertical-align: middle;
+}
+
+#reservationHistory p {
+  font-size: 0.9em;
+}
+
+/* bootstrap4 overwrittes */
+.form-control:disabled, .form-control[readonly] {
+  background-color: #f7f7f7;
+}
+
+#reservation-app #document .field-label {
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+#reservation-app #document .field-data {
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+/*# sourceMappingURL=app.css.map */

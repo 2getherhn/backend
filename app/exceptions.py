@@ -1,0 +1,2 @@
+class SavingException(Exception):
+    pass

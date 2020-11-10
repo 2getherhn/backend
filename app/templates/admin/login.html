@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="container-fluid  h-100 " id="login">
+   <div class="row h-100">
+      <div class="col-md-6 col-lg-8 d-none d-md-block" id="login-intro">
+         <div class="logo">
+              <img class="logo-icon" src="{% static 'images/logo_horizontal.png' %}">
+         </div>
+         <div class="title">
+              Welcome to 2GETHER!
+         </div>
+         <div class="description">
+            <span>To coordinate the logistics between the ones that need help and the ones willing to provide it.</span>
+         </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4  bar">
+         <div class="col-xs-12 w-75" id="login-form">
+              <div class="logo d-block d-md-none">
+                    <img class="logo-icon " src="{% static 'images/logo_horizontal.png' %}">
+              </div>
+
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

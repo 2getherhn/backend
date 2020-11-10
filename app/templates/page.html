@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load app_filters %}
+<div class="wrapper">
+    <div id="content">
+        <div id="toolbar">
+            <div class="start-center">
+                <div class="px-8 px-md-16">
+                    <img class="logo-icon" src="{% static 'images/logo_horizontal.png' %}">
+                </div>
+                </div>
+                <div class="right d-print-none">
+                    <!-- user menu -->
+                    <ul class="navbar-nav mr-4">
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <small>{% if user.is_authenticated %}{{ user.get_full_name }}{% endif %}</small>
+<!--                                    <img class="avatar mr-0 mr-sm-16" src="{% static 'images/profile.jpg' %}">-->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" >
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <!-- header -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
+            <a  class="nav-link ng-star-inserted active accent" target="_self" href="/" id="active-navbar">
+                <i class="fa fa-home"></i>
+                <span class="nav-link-title ng-star-inserted">Home</span>
+            </a>
+            <div class="collapse navbar-collapse" >
+                <!-- main menu -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_self">
+                        </a>
+                    </li>
+                </ul>
+
+
+
+                <!-- search container -->
+                <div class="search-container">
+                    <form class="form-inline my-2 my-lg-0 mr-2"
+                        action="/"
+                        method="GET">
+                        <input class="form-control mr-sm-2" type="search"
+                               name="search" id="search" placeholder="Search" value="{{ search_term }}" aria-label="Search">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+
+            </div> <!-- /main-navbar -->
+        </nav> <!-- /navbar -->
+
+        <!-- main -->
+        <div id="main" class="container-fluid mb-4">
+            {% block page %}{% endblock %}
+        </div>
+
+    </div>
+</div>
+<script src="https://d39up0hnrxe5gy.cloudfront.net/javascripts/page.js"></script>
+{% endblock %}

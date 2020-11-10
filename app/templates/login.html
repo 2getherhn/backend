@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="container-fluid  h-100 " id="login">
+   <div class="row h-100">
+      <div class="col-md-6 col-lg-8 d-none d-md-block" id="login-intro">
+         <div class="logo">
+              <img class="logo-icon" src="{% static 'images/logo_horizontal.png' %}">
+         </div>
+         <div class="title">
+              Welcome to 2Gether!
+         </div>
+         <div class="description">
+            <span>To coordinate the logistics between the ones that need help and the ones willing to provide it.</span>
+         </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4  bar">
+         <div class="col-xs-12 w-75" id="login-form">
+              <div class="logo d-block d-md-none">
+                    <img class="logo-icon " src="{% static 'images/logo_horizontal.png' %}">
+              </div>
+             {{ form }}
+               <form method="post">
+                  {% csrf_token %}
+                  <div class="form-group">
+                     <label for="inputName">Username</label>
+                     <input type="text" class="form-control" name="username" id="inputName"  placeholder="Enter username"  required>
+                  </div>
+                  <div class="form-group">
+                     <label for="passwordInput">Password</label>
+                     <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password"  required>
+                  </div>
+                  <button type="submit" class="btn btn-primary login mat-raised-button">Submit</button>
+                  <input type="hidden" name="next" value="{{ next }}">
+               </form>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

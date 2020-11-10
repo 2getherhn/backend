@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+{% block page %}
+{% load app_filters %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Albergue</h3>
+            </div>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col-md-12 text-center">
+                <h6>Nuevo Albergue</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <small># de albergue:</small>
+                <h4>{{ shelter_number }}</h4>
+            </div>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            {% include "forms/shelter_form.html" %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div id="reservations">
+    <div class="header"></div>
+    <div class="subheader">
+        <div class="row">
+            <div class="container">
+                <div class="span8 align-center">
+                    <img class="logo" src="{% static 'images/logo_horizontal.png' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="content" class="span8">
+            <div class="row mt-4 text-center">
+                <div class="col-md-12 ml-2">
+                    <h4 class="form-title">2GETHER</h4>
+                </div>
+            </div>
+            <!-- main -->
+            <div id="main" class="container-fluid mb-4">
+                {% block page %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

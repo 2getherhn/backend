@@ -1,0 +1,63 @@
+{% load app_filters %}
+    <div id="shelter-form-app">
+        <div class="row" v-if="errors.length">
+            <div class="col-md-12">
+                <span>Please correct the following error(s):</span>
+                <div v-for="error in errors" class="alert alert-warning alert-dismissible fade show" role="alert">[[ error ]]</div>
+            </div>
+        </div>
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="alert alert-info alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {{msg.message}}
+            </div>
+          {% endfor %}
+        {% endif %}
+        <form id="new-shelter-form" class="needs-validation"
+              action="{% url 'shelter-form' %}" method="POST" @submit="validateRequestForm">
+            {% csrf_token %}
+            <div id="request-details">
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="name">Name :</label>
+                        <input type="text"  class="form-control" maxlength="120"
+                           id="name"
+                           name="name"
+                           value="{{ shelter.name }}" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="id_patient_diagnosis">Type:</label>
+                        <select class="form-control" id="id_patient_diagnosis" name="patient_diagnosis" v-model='patient_diagnosis' required>
+                            <option selected="" value="">---------</option>
+                             <option v-for='data in patient_diagnosis_options' :value='data.id'>[[ data.name ]]</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <input class="btn btn-success btn-lg" type="submit" value="Guardar">
+                </div>
+            </div>
+        </form>
+    </div>
+<script>
+var request_app = new Vue({
+    el: '#shelter-form-app',
+    delimiters: ['[[',']]'],
+    data: {
+        errors:[]
+    },
+    mounted: function(){
+
+    },
+    methods: {
+    },
+    components: {
+
+    }
+});
+</script>
