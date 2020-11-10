@@ -22,6 +22,9 @@ services:
   together:
     build:
       context: .
+      args:
+        ENVIRONMENT: 'default'
+        SECRET_KEY: 'some key'
     entrypoint: /bin/sh -c "sleep 5 && python3 manage.py migrate  &&  gunicorn -w 2 -b 0.0.0.0:5000 together.wsgi:application --reload"
     volumes:
       - .:/opt
